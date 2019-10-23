@@ -26,7 +26,7 @@ print(win.keys())
 # dict_keys(['data', 'target', 'target_names', 'DESCR', 'feature_names'])
 
 X = win.data
-print(X.shape)  # (178, 13)
+print(X.shape)  #  (178, 13)
 
 y = win.target
 print(y.shape)  # (178,)
