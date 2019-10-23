@@ -49,6 +49,10 @@ KNN_clf = KNeighborsClassifier(n_neighbors=3)
 KNN_clf.fit(X_train, y_train)
 y_predict = KNN_clf.predict(X_test)
 
+
+
+
+
 from sklearn.metrics import accuracy_score
 
 sc = accuracy_score(y_test, y_predict)
