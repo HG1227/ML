@@ -140,33 +140,10 @@ class kNNClassifier:
 
 
 
-'''
-手写分类准确度算法
-'''
-def accuracy_score(y_test, y_predict):
-    assert y_test.shape[0] == y_predict.shape[0], "预测的y值和测试集的y值行数要一样"
-    return sum(y_test == y_predict) / len(y_predict)
-
-'''
-Sklearn 的第二种方法是直接调用 model.score 方法得到模型分数，
-我们仍然可以尝试做到。
-'''
-def predict(X_test):
-    pass
-
-def score(X_test,y_test):
-    y_predict=predict(X_test)
-    return accuracy_score(y_test,y_predict)
 
 
 
-"""
-手写 train_test_split 函数
 
-观察到原始数据集的标签值是从 0 到 2 有序排列的，所以不能直接划分，
-要先把数据集打乱保证随机抽样。打乱可以用 numpy 的 permutation 函数，
-它会返回打乱后的数据集的索引，
-这个函数的妙处就在于根据索引就能同时匹配到 X 和 y。二者是一一对应的。
-"""
+
 
 
