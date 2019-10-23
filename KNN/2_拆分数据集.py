@@ -65,6 +65,8 @@ def train_test_split(X, y, test_raton=0.3, seed=None):
         np.random.seed(seed)
 
     shuffle_index = np.random.permutation(len(X))
+
+    print(shuffle_index)
     test_size = ceil(len(X) * test_ratio)
     test_index = shuffle_index[:test_size]
     train_index = shuffle_index[test_size:]
