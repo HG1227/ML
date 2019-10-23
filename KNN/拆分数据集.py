@@ -1,9 +1,15 @@
 #!/usr/bin/python
 #coding:utf-8
 
+
+
 """
-@software: PyCharm
-@file: 拆分数据集.py
+手写 train_test_split 函数
+
+观察到原始数据集的标签值是从 0 到 2 有序排列的，所以不能直接划分，
+要先把数据集打乱保证随机抽样。打乱可以用 numpy 的 permutation 函数，
+它会返回打乱后的数据集的索引，
+这个函数的妙处就在于根据索引就能同时匹配到 X 和 y。二者是一一对应的。
 """
 
 import numpy as  np
