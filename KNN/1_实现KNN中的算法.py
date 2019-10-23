@@ -85,7 +85,7 @@ class kNNClassifier:
 
     def fit(self, X_train, y_train):
         '''
-        接着定义一个 fit 函数，这个函数就是用来拟合 kNN 模型，
+        接着定义一个 fit 函数，这个函数就 是用来拟合 kNN 模型，
         但 kNN 模型并不需要拟合，所以我们就原封不动地把数据集复制一遍，
         最后返回两个数据集自身。
         :param X_train:
