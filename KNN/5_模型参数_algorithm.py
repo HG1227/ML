@@ -56,7 +56,7 @@ from  sklearn.model_selection import train_test_split
 from  sklearn.neighbors import KNeighborsClassifier
 import time
 
-#第一个超参数：algorithm
+#第一个超参 数：algorithm
 #第一个数据集是样本数 m 大于样本 2 的 n 次方，依次建立 kNN 模型并计算运行时间：
 def test1(m,n):
     # m=2000
