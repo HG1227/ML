@@ -2,7 +2,7 @@
 # coding:utf-8
 
 """
-@software: PyCharm
+@software:  PyCharm
 @file: 回归树.py
 """
 
