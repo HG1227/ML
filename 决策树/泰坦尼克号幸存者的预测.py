@@ -6,13 +6,13 @@
 @file: 泰坦尼克号幸存者的预测.py
 """
 
+import numpy as np
 # 1. 导入所需要的库
 # 1. 导入所需要的库
 import pandas as pd
-import numpy as np
+from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import GridSearchCV
 
 # 2. 导入数据集，探索数据
 data = pd.read_csv('data.csv', index_col=0)
@@ -51,19 +51,18 @@ for i in [Xtrain, Xtest, Ytrain, Ytest]:
 
 # 5. 导入模型，粗略跑一下查看结果
 clf = DecisionTreeClassifier(random_state=25)
-clf = clf.fit(Xtrain, Ytrain)
+clf.fit(Xtrain, Ytrain)
 score_ = clf.score(Xtest, Ytest)
 print(score_)
 
-
-parameters = {'splitter':('best','random')
-                ,'criterion':("gini","entropy")
-                ,"max_depth":[*range(1,10)]
-                ,'min_samples_leaf':[*range(1,50,5)]
-                ,'min_impurity_decrease':[*np.linspace(0,0.5,20)]
-}
+parameters = {'splitter': ('best', 'random'),
+              'criterion': ("gini", "entropy"),
+              "max_depth": [*range(1, 10)],
+              'min_samples_leaf': [*range(1, 50, 5)],
+              'min_impurity_decrease': [*np.linspace(0, 0.5, 20)],
+              }
 clf = DecisionTreeClassifier(random_state=25)
 GS = GridSearchCV(clf, parameters, cv=10)
-GS.fit(Xtrain,Ytrain)
+GS.fit(Xtrain, Ytrain)
 print(GS.best_params_)
 print(GS.best_score_)
