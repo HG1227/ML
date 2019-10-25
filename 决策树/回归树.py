@@ -12,7 +12,6 @@ from sklearn.tree import DecisionTreeRegressor
 
 boston = load_boston()
 regressor = DecisionTreeRegressor(random_state=321)
-
 # 交叉验证cross_val_score的用法
 cross_val_score(regressor, boston.data, boston.target
                 , cv=10
