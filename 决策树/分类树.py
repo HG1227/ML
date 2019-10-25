@@ -42,16 +42,16 @@ print(clf.apply(Xtest))
 feature_name = ['酒精','苹果酸','灰','灰的碱性','镁','总酚','类黄酮','非黄烷类酚类'
     ,'花青素','颜色强度','色调','od280/od315稀释葡萄酒','脯氨酸']
 
-with open('tee.gv', 'w') as dot_tree:
-    dot_tree=tree.export_graphviz(clf,
-                                  feature_names=feature_name,
-                                  class_names=['c1','c2','c3'],
-                                  filled=True,
-                                  rounded=True,
-                                  out_file=dot_tree,
-                                  special_characters=True
-
-    )
+# with open('tee.gv', 'w') as dot_tree:
+#     dot_tree=tree.export_graphviz(clf,
+#                                   feature_names=feature_name,
+#                                   class_names=['c1','c2','c3'],
+#                                   filled=True,
+#                                   rounded=True,
+#                                   out_file=dot_tree,
+#                                   special_characters=True
+#
+#     )
 
 
 #6. 探索决策树
