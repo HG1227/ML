@@ -3,7 +3,7 @@
 
 """
 @software:  PyCharm
-@file: 回归树.py
+@file:  回归树.py
 """
 
 from sklearn.datasets import load_boston
