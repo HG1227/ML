@@ -30,7 +30,7 @@ def makeLinearSeparableData(weights, numLines):
     return dataSet
 
 
-data = makeLinearSeparableData([4.3, 2], 100)
+data = makeLinearSeparableData([4,3, 2], 100)
 print(data)
 
 
