@@ -100,8 +100,10 @@ legend.legendHandles[0]._sizes = [10]
 legend.legendHandles[1]._sizes = [20]
 plt.show()
 ```
+![](https://raw.githubusercontent.com/HongGHu/tuchuang/master/20191204230501.png)
 
-参考：[Outlier detection with Local Outlier Factor (LOF)](scikit-learn.org/stable/auto_examples/neighbors/plot_lof_outlier_detection.html#sphx-glr-auto-examples-neighbors-plot-lof-outlier-detection-py)
+
+参考：<scikit-learn.org/stable/auto_examples/neighbors/plot_lof_outlier_detection.html#sphx-glr-auto-examples-neighbors-plot-lof-outlier-detection-py>
 $$
 \begin{equation}
 1+2+3+\dots+(n-1)+n = \frac{n(n+1)}{2}
