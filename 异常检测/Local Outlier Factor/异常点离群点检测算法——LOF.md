@@ -1,12 +1,16 @@
 # 					异常点/离群点检测算法——LOF
 
+![](https://raw.githubusercontent.com/HongGHu/tuchuang/master/bfdd5e2ely1fweovqontkj20ro0rojtj.jpg)
+
 ## 1. 算法介绍
 
-![](lof/幻灯片1.PNG)
+![](https://raw.githubusercontent.com/HongGHu/tuchuang/master/%E5%B9%BB%E7%81%AF%E7%89%871.PNG)
 
-![](lof/幻灯片2.PNG)
+![](https://raw.githubusercontent.com/HongGHu/tuchuang/master/%E5%B9%BB%E7%81%AF%E7%89%872.PNG)
 
-![](lof/幻灯片3.PNG)
+![](https://raw.githubusercontent.com/HongGHu/tuchuang/master/%E5%B9%BB%E7%81%AF%E7%89%873.PNG)
+
+
 
 ##  2. `sklearn` 模块**中的`LocalOutlierFactor `(LOF)
 
@@ -97,4 +101,10 @@ legend.legendHandles[1]._sizes = [20]
 plt.show()
 ```
 
-参考：<https://zhuanlan.zhihu.com/p/28178476>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+参考：[Outlier detection with Local Outlier Factor (LOF)](scikit-learn.org/stable/auto_examples/neighbors/plot_lof_outlier_detection.html#sphx-glr-auto-examples-neighbors-plot-lof-outlier-detection-py)
+$$
+\begin{equation}
+1+2+3+\dots+(n-1)+n = \frac{n(n+1)}{2}
+\end{equation}
+$$
+​     ![](https://raw.githubusercontent.com/HongGHu/tuchuang/master/00642gdOly1g6fvgc7ivuj30go0go3z1.jpg)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
