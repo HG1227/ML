@@ -168,32 +168,15 @@ def naive_bayes(train, test):
 
 if __name__ == '__main__':
     # Test Naive Bayes on Iris Dataset
-    # seed(1)
-    # filename = 'iris.csv'
-    # dataset = load_csv(filename)
-    # for i in range(len(dataset[0]) - 1):
-    #     str_column_to_float(dataset, i)
-    # # convert class column to integers
-    # str_column_to_int(dataset, len(dataset[0]) - 1)
-    # # evaluate algorithm
-    # n_folds = 5
-    # scores = evaluate_algorithm(dataset, naive_bayes, n_folds)
-    # print('Scores: %s' % scores)
-    # print('Mean Accuracy: %.3f%%' % (sum(scores) / float(len(scores))))
-
-    # Make a prediction with Naive Bayes on Iris Dataset
-
-    # Make a prediction with Naive Bayes on Iris Dataset
+    seed(1)
     filename = 'iris.csv'
     dataset = load_csv(filename)
     for i in range(len(dataset[0]) - 1):
         str_column_to_float(dataset, i)
     # convert class column to integers
     str_column_to_int(dataset, len(dataset[0]) - 1)
-    # fit model
-    model = summarize_by_class(dataset)
-    # define a new record
-    row = [5.7, 2.9, 4.2, 1.3]
-    # predict the label
-    label = predict(model, row)
-    print('Data=%s, Predicted: %s' % (row, label))
+    # evaluate algorithm
+    n_folds = 5
+    scores = evaluate_algorithm(dataset, naive_bayes, n_folds)
+    print('Scores: %s' % scores)
+    print('Mean Accuracy: %.3f%%' % (sum(scores) / float(len(scores))))
