@@ -37,8 +37,8 @@ def pca(XMat, k):
         print("k must lower than feature number")
         return
     else:
-        selectVec = np.mat(feat_vec.T[index[:k]])  # 最大的k个特征值对应的特征向量构成的矩阵
-        final_data = data_adjust * selectVec.T  # 低维特征空间的数据(将样本点投影到选取的特征向量上)
+        selectVec = np.mat(feat_vec.T[index[:k]])   # 最大的k个特征值对应的特征向量构成的矩阵
+        final_data = data_adjust * selectVec.T      # 低维特征空间的数据(将样本点投影到选取的特征向量上)
         reconData = (final_data * selectVec) + average  # 重构数据
     return final_data, reconData
 
