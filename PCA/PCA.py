@@ -39,6 +39,8 @@ def pca(XMat, k):
     else:
         selectVec = np.mat(feat_vec.T[index[:k]])   # 最大的k个特征值对应的特征向量构成的矩阵
         final_data = data_adjust * selectVec.T      # 低维特征空间的数据(将样本点投影到选取的特征向量上)
+                                                    # 降维后的矩阵，相当于 sklearn 中 PCA transform后的返回值
+
         reconData = (final_data * selectVec) + average  # 重构数据(不太明白)
     return final_data, reconData
 
@@ -61,5 +63,5 @@ if __name__ == '__main__':
     data = np.array(pd.read_csv('data.csv', index_col=None, header=None))
     k = 2
     finalData, reconMat = pca(data, k)
-
+    print(finalData)
     plotBestFit(finalData, reconMat)
