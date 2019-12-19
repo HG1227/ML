@@ -105,6 +105,8 @@ def train(dataSet, plot=False):
         ax.add_line(Line2D((-12, 12), ys, linewidth=1, color='blue'))
         plt.legend(loc='upper right')
         plt.legend(loc='upper right')
+        plt.savefig('pe.png',dpi=600)
+
         plt.show()
 
     return w
