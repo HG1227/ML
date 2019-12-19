@@ -30,12 +30,7 @@ def makeLinearSeparableData(weights, numLines):
     return dataSet
 
 
-data = makeLinearSeparableData([4,3, 2], 100)
-print(data)
-
-
 # 将数据集可视化
-
 def plotData(dataSet):
     import matplotlib.pyplot as plt
     fig = plt.figure()
@@ -58,37 +53,31 @@ def plotData(dataSet):
     plt.show()
 
 
-# plotData(data)
+
 
 
 # 训练感知机，可视化分类器及其法向量
 def train(dataSet, plot=False):
     ''' (array, boolean) -> list
-
     Use dataSet to train a perceptron
     dataSet has at least 2 lines.
-
     '''
-
 
     # 随机梯度下降算法
     numLines = dataSet.shape[0]
     numFearures = dataSet.shape[1]
-
     w = np.zeros((1, numFearures - 1))  # initialize weights
-    separated = False
 
+    separated = False
     i = 0
+    alpha = 0.5
     while not separated and i < numLines:
         if dataSet[i][-1] * np.sum(w * dataSet[i, 0:-1]) <= 0:  # 如果分类错误
-            w = w + dataSet[i][-1] * dataSet[i, 0:-1]  # 更新权重向量
+            w = w + alpha * dataSet[i][-1] * dataSet[i, 0:-1]  # 更新权重向量
             separated = False  # 设置为未完全分开
             i = 0  # 重新开始遍历每个数据点
         else:
             i += 1  # 如果分类正确，检查下一个数据点
-
-
-
 
     if plot == True:
         import matplotlib.pyplot as plt
@@ -103,6 +92,7 @@ def train(dataSet, plot=False):
         idx_1 = np.where(dataSet[:, 2] == 1)
         p1 = ax.scatter(dataSet[idx_1, 0], dataSet[idx_1, 1],
                         marker='o', color='g', label=1, s=20)
+
         idx_2 = np.where(dataSet[:, 2] == -1)
         p2 = ax.scatter(dataSet[idx_2, 0], dataSet[idx_2, 1],
                         marker='x', color='r', label=2, s=20)
@@ -111,22 +101,15 @@ def train(dataSet, plot=False):
         x = w[0][0] / np.abs(w[0][0]) * 10
         y = w[0][1] / np.abs(w[0][0]) * 10
 
-        # ann = ax.annotate(u"", xy=(x, y),
-        #                   xytext=(0, 0), size=20, arrowprops=dict(arrowstyle="-|>"))
-        # 用来产生两个点的 y 值，以绘制一条直线（感知机）
         ys = (-12 * (-w[0][0]) / w[0][1], 12 * (-w[0][0]) / w[0][1])
         ax.add_line(Line2D((-12, 12), ys, linewidth=1, color='blue'))
         plt.legend(loc='upper right')
-
         plt.legend(loc='upper right')
         plt.show()
 
     return w
 
-
-data = makeLinearSeparableData([4, 3], 100)
-w = train(data, True)
-
-
-
-
+if __name__ == '__main__':
+    data = makeLinearSeparableData([4, 3], 100)
+    # print(data)
+    w = train(data, True)
