@@ -31,8 +31,11 @@ def w_calc(xmat, ymat, alpha=0.001, maxIter=100001):
 
     # W update
     for i in range(maxIter):
+        # 拟合函数
         H = 1 / (1 + np.exp(-xmat * W))
+        # 损失函数求偏导
         dw = xmat.T * (H - ymat)
+        # 更新 W
         W -= alpha * dw
 
     return W
